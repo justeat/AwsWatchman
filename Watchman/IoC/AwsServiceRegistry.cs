@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Amazon.AutoScaling.Model;
 using Amazon.DynamoDBv2.Model;
 using Amazon.ElasticLoadBalancing.Model;
+using Amazon.ElastiCache.Model;
 using Amazon.Lambda.Model;
 using Amazon.RDS.Model;
 using Amazon.StepFunctions.Model;
@@ -11,6 +12,7 @@ using Watchman.AwsResources;
 using Watchman.AwsResources.Services.Alb;
 using Watchman.AwsResources.Services.AutoScaling;
 using Watchman.AwsResources.Services.DynamoDb;
+using Watchman.AwsResources.Services.ElastiCache;
 using Watchman.AwsResources.Services.Elb;
 using Watchman.AwsResources.Services.Kinesis;
 using Watchman.AwsResources.Services.Lambda;
@@ -74,6 +76,10 @@ namespace Watchman.IoC
             AddService<QueueDataV2, QueueDataV2Source, QueueDataProvider, SqsResourceConfig, SqsResourceAlarmGenerator>(
                 WatchmanServiceConfigurationMapper.MapSqs, Defaults.Sqs
                 );
+
+            AddService<CacheNode, ElastiCacheSource, ElastiCacheAlarmDataProvider, ResourceConfig>(
+                WatchmanServiceConfigurationMapper.MapElastiCache, Defaults.ElastiCache
+            );
         }
 
         private void AddService<TServiceModel, TSource, TDataProvider, TResourceAlarmConfig>(

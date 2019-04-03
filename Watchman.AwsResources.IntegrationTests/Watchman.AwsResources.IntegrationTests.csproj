@@ -11,4 +11,9 @@
     <ProjectReference Include="..\TestHelper\TestHelper.csproj" />
     <ProjectReference Include="..\Watchman.AwsResources\Watchman.AwsResources.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.ElastiCache">
+      <HintPath>..\..\..\..\Users\michal.twarowski\.nuget\packages\awssdk.elasticache\3.3.4\lib\netstandard1.3\AWSSDK.ElastiCache.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

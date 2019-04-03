@@ -117,6 +117,7 @@ The following services are supported
 - `DynamoDb` (new implementation of the existing non-cloudformation mechanism)
 - `Sqs` (new implementation of the existing non-cloudformation mechanism)
 - `VpcSubnet` (this is a custom service using JUST EAT custom metrics)
+- `ElastiCache`
 
 ## Alarm names and default thresholds
 
@@ -204,6 +205,11 @@ Note that using the defaults here for all alarms is probably not that useful.
 - `Target5xxErrorsHigh`: 10 (count)
 - `RejectedConnectionCountHigh`: 10 (count)
 - `TargetResponseTimeHigh`: 2 (seconds) compared against `p99`
+
+### ElastiCache
+
+- `CPUUtilizationHigh`: 60 (%)
+- `EvictionStarted`: 1
 
 ## Full example
 

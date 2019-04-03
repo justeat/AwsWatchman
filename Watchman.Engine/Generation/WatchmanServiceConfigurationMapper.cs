@@ -68,6 +68,13 @@ namespace Watchman.Engine.Generation
         }
 
 
+        public static WatchmanServiceConfiguration<ResourceConfig> MapElastiCache(WatchmanConfiguration input)
+        {
+            const string id = "ElastiCache";
+            return Map(input, id, a => a?.Services?.ElastiCache);
+        }
+
+
         private static WatchmanServiceConfiguration<TConfig> Map<TConfig>(WatchmanConfiguration input,
             string serviceName,
             Func<AlertingGroup, AwsServiceAlarms<TConfig>> readServiceFromGroup) where TConfig : class

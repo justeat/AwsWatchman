@@ -12,5 +12,6 @@ namespace Watchman.Engine
         public const string Alb = "AWS/ApplicationELB";
         public const string Kinesis = "AWS/Kinesis";
         public const string StepFunction = "AWS/States";
+        public const string ElastiCache = "AWS/ElastiCache";
     }
 }

@@ -16,6 +16,7 @@ namespace Watchman.Configuration
         public AwsServiceAlarms<ResourceConfig> StepFunction { get; set; }
         public AwsServiceAlarms<DynamoResourceConfig> DynamoDb { get; set; }
         public AwsServiceAlarms<SqsResourceConfig> Sqs { get; set; }
+        public AwsServiceAlarms<ResourceConfig> ElastiCache { get; set; } //todo MT is this ok?
 
 
         public IList<IAwsServiceAlarms> AllServices => new IAwsServiceAlarms[]
@@ -34,7 +35,8 @@ namespace Watchman.Configuration
             {"KinesisStream", KinesisStream},
             {"StepFunction", StepFunction},
             {"DynamoDb", DynamoDb},
-            {"Sqs", Sqs }
+            {"Sqs", Sqs },
+            {"ElastiCache", ElastiCache }
         };
     }
 }
